@@ -1,7 +1,7 @@
 {
   "name": "template-ts-api",
   "version": "1.0.0",
-  "description": "Template for API with TS & Node",
+  "description": "Template for API with Node, Express & Sequelize",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon - exec 'ts-node' src/index.ts",
