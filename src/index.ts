@@ -6,4 +6,4 @@ configDotenv();
 
 const app = new Server();
 
-app.listen();
+app.init();

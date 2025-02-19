@@ -8,7 +8,7 @@ import {
 import { db } from '../Connection';
 import { Authentication } from '../../models/Authentication';
 
-export interface UserItem {
+export interface UserItem extends Record<string, unknown>{
   id?: number;
   email: string;
   password: string;

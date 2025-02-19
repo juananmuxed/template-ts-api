@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -27,7 +28,7 @@ export class Authentication {
     return jwt.sign(
       payload,
       secret || this.secret,
-      { expiresIn: this.expiresIn },
+      { expiresIn: this.expiresIn } as jwt.SignOptions,
     );
   }
 

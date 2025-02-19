@@ -4,14 +4,14 @@ import usersRoutes from '@routes/users/Users';
 import rolesRoutes from '@routes/users/Roles';
 import authenticationRoutes from '@routes/auth/Auth';
 
-const Paths = [
+export const PATHS = [
   'docs',
   'users',
   'roles',
   'authentication',
 ] as const;
 
-type ApiPaths = typeof Paths[number];
+type ApiPaths = typeof PATHS[number];
 
 const rootPath = '/api/';
 export const apiPaths: Record<ApiPaths, string> = {

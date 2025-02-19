@@ -8,7 +8,7 @@ import { apiPaths, setRoutes } from '@routes/Main';
 import { syncDatabase } from '@db/Sync';
 import { seedDatabase } from '@db/Seed';
 import { useSwagger } from '@middlewares/Swagger';
-import { useDefaultErrorHandler, useErrorHandler } from '@middlewares/ErrorHandler';
+import { logError, useDefaultErrorHandler, useErrorHandler } from '@middlewares/ErrorHandler';
 
 const log = useLoggerServer();
 
@@ -23,16 +23,17 @@ export class Server {
     this.app = express();
     this.port = process.env.API_PORT || 3000;
     this.host = process.env.API_HOST || 'localhost';
+  }
 
+  async init() {
     this.dbConnection();
     this.middleWares();
     this.routes();
     this.swagger();
     this.errorHandler();
-    this.syncDatabase()
-      .then(() => {
-        this.seedDatabase();
-      });
+    await this.syncDatabase();
+    await this.seedDatabase();
+    this.listen();
   }
 
   async dbConnection() {
@@ -55,11 +56,21 @@ export class Server {
   }
 
   async syncDatabase() {
-    await syncDatabase();
+    try {
+      await syncDatabase();
+      log.simpleMessage('🗃️  Database sync', 'magenta');
+    } catch (error) {
+      throw new Error(error as string);
+    }
   }
 
   async seedDatabase() {
-    await seedDatabase();
+    try {
+      await seedDatabase();
+      log.simpleMessage('🌱 Database initial seed', 'yellow');
+    } catch (error) {
+      throw new Error(error as string);
+    }
   }
 
   swagger() {
@@ -72,6 +83,7 @@ export class Server {
 
   errorHandler() {
     this.app.use(useDefaultErrorHandler);
+    this.app.use(logError);
     this.app.use(useErrorHandler);
   }
 
