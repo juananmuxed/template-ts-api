@@ -11,4 +11,5 @@ export const dbPassword = process.env.DB_PASS || '';
 export const db = new Sequelize(dbTable, dbUser, dbPassword, {
   host: dbHost,
   dialect: 'mariadb',
+  logging: false,
 });
