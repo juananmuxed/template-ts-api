@@ -32,13 +32,6 @@
     "javascript",
     "typescript",
   ],
-  "eslint.options": {
-    "extensions": [
-      ".html",
-      ".js",
-      ".ts",
-    ]
-  },
   "html.format.enable": false,
   "emmet.triggerExpansionOnTab": true,
   "files.exclude": {
@@ -58,8 +51,6 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onWindowChange",
-  "turboConsoleLog.quote": "'",
-  "turboConsoleLog.addSemicolonInTheEnd": true,
   "todo-tree.highlights.defaultHighlight": {
     "type": "text",
     "opacity": 80
@@ -89,23 +80,23 @@
   "eslint.codeActionsOnSave.mode": "problems",
   "testing.automaticallyOpenPeekView": "never",
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#b2b05f",
-    "activityBar.background": "#b2b05f",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#e9f5f4",
+    "activityBar.activeBackground": "#a83bc0",
+    "activityBar.background": "#a83bc0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#c3ab3c",
     "activityBarBadge.foreground": "#15202b",
-    "commandCenter.border": "#15202b99",
-    "sash.hoverBorder": "#b2b05f",
-    "statusBar.background": "#969448",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#747237",
-    "statusBarItem.remoteBackground": "#969448",
-    "statusBarItem.remoteForeground": "#15202b",
-    "titleBar.activeBackground": "#969448",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#96944899",
-    "titleBar.inactiveForeground": "#15202b99"
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#a83bc0",
+    "statusBar.background": "#862f99",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#a83bc0",
+    "statusBarItem.remoteBackground": "#862f99",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#862f99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#862f9999",
+    "titleBar.inactiveForeground": "#e7e7e799"
   },
   "cSpell.words": [
     "signup",
